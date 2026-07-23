@@ -1,0 +1,15 @@
+services:
+  stremio-artwork:
+    # Replace OWNER/REPO with your GitHub username/org and repo name
+    image: ghcr.io/OWNER/REPO:latest
+    container_name: stremio-artwork
+    restart: unless-stopped
+    ports:
+      - "7777:7777"
+    env_file:
+      - .env
+    volumes:
+      - artwork-data:/data
+
+volumes:
+  artwork-data:
